@@ -5,7 +5,7 @@
 
 - 📫 How to reach me **maksymboiko42@gmail.com**
 
-- 📄 My [CV](https://drive.google.com/file/d/1NzE-AGupeMYSQmkGd362N74c1phUZVkE/view?usp=sharing)
+- 📄 My [CV](https://drive.google.com/file/d/1eefcVZPj133OythZjsZcCU9mu-fxZtrX/view?usp=sharing)
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
