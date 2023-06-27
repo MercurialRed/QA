@@ -1,0 +1,1 @@
+#### Created [JSON-file](jsonformatter.txt) in [JSON-parser](https://jsonformatter.org/json-parser).

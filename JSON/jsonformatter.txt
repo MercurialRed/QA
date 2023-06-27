@@ -1,0 +1,54 @@
+{
+  "songs": [
+    {
+      "title": "The Sound of Silence",
+      "performed_by": "Simon & Garfunkel",
+      "released": 1965,
+      "album": "Wednesday Morning, 3 A.M.",
+      "genre": "Folk rock",
+      "single": true,
+      "soundtrack": [
+        "The Graduate",
+        "Watchmen",
+        "Bobby"
+      ]
+    },
+    {
+      "title": "Battery",
+      "performed_by": "Metallica",
+      "released": 1986,
+      "album": "Master of Puppets",
+      "genre": "Thrash Metal",
+      "single": false,
+      "soundtrack": [
+        "Project X",
+        "Rock Band 2"
+      ]
+    },
+    {
+      "title": "Poker Face",
+      "performed_by": "Lady Gaga",
+      "released": 2008,
+      "album": "The Fame",
+      "genre": "Dance-Pop",
+      "single": true,
+      "soundtrack": [
+        "Karate Kid",
+        "South Park"
+      ]
+    },
+    {
+      "title": "We Are The Champions",
+      "performed_by": "Queen",
+      "released": 1977,
+      "album": "News of the World",
+      "genre": "Hard Rock",
+      "single": true,
+      "soundtrack": [
+        "A Knight's Tale",
+        "Bohemian Rhapsody",
+        "The Babysitter"
+      ]
+    }
+  ]
+}

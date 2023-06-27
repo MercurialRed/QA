@@ -1,0 +1,50 @@
+<mythology>
+	<greek>
+		<gods>
+			<Ares godof="War" planet="Mars" symbol="Spear">Ares, the God of War</Ares>
+			<Artemis godof="Hunt" planet="Moon" symbol="Crescent">Artemis, the Goddes of the Hunt</Artemis>
+			<Thanatos godof="Death" symbol="Theta">Thanatos, the Hand of Death</Thanatos>
+		</gods>
+		<heroes>
+			<Achilles event="Trojan War">Achilles, the Hero of the Trojan War</Achilles>
+			<Perseus event="Gorgona" symbol="Medusa's Head">Perseus, the Braveheart</Perseus>
+			<Daedalus event="Labyrinth">Daedalus, the Great Inventor</Daedalus>
+		</heroes>
+		<creatures>
+			<Cerberus>Cerberus</Cerberus>
+			<Minotaur>Minotaur</Minotaur>
+		</creatures>
+	</greek>
+	<egyptian>
+		<gods>
+			<Ra godof="Sun" symbol="Sun Disc" animal="Falcon">Ra, the Sun God</Ra>
+			<Neith symbol="Crossed Arrows">Neith, the Weaver of Fate</Neith>
+			<Sobek godof="Nile" symbol="Crocodile" animal="Crocodile">Sobek, the God of the Nile</Sobek>
+		</gods>
+		<heroes/>
+		<creatures/>
+	</egyptian>
+	<norse>
+		<gods>
+			<Thor godof="Thunder" symbol="Hammer">Thor, the God of Thunder</Thor>
+			<Skadi godof="Winter" symbol="Wolf">Skadi, the Goddes of Winter</Skadi>
+		</gods>
+		<heroes>
+			<Ullr>Ullr, the Glorious One</Ullr>
+		</heroes>
+		<creatures>
+			<Fenrir>Fenrir, the Unbound</Fenrir>
+		</creatures>
+	</norse>
+	<chinese>
+		<gods>
+			<Change godof="Moon">Chang'e, the Faerie of the Moon</Change>
+		</gods>
+		<heroes>
+			<MonkeyKing>Sun Wukong, the Monkey King</MonkeyKing>
+			<Mulan>Mulan, the Ascendant Warrior</Mulan>
+		</heroes>
+		<creatures/>
+	</chinese>
+	<slavic/>
+</mythology>
