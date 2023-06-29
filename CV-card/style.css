@@ -1,0 +1,54 @@
+
+body {
+  font-family: Roboto, sans-serif;
+}
+
+.container {
+  padding: 0 40px;
+  margin-left: 100px;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+h2 {
+  font-size: 25px;
+  margin: 25px 0;
+}
+
+  /* Avatar*/
+.photo {
+  border-radius: 100px;
+  border: 3px solid transparent;
+  /* Border */
+  box-shadow: 0 4px 15px 0px rgba(0, 0, 0, 0.52);
+  object-fit: cover;
+}
+
+.photo:hover {
+  border: 3px solid #FFD700;
+}
+
+  /* Links */
+a {
+  display: block;
+  text-decoration:none;
+  margin-bottom: 35px;
+  position: relative;
+}
+
+a:hover {
+  color:darkred;
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  transform: translateY(1.5em);
+  border-bottom: 1px solid #dadada;
+  width: 300px;
+}
+
