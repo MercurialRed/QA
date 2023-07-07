@@ -1,3 +1,3 @@
-#### This Telegram Bot returs a random joke about Chuck Norris.
+#### This Telegram Bot returns a random joke about Chuck Norris.
 
-[Chuck Norris](https://api.chucknorris.io/)
+[Chuck Norris](https://t.me/daddy_chuck_bot)
