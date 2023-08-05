@@ -1,14 +1,20 @@
+import random
 from Python_autotests.data.data import Person
 from faker import Faker
 
-faker_ = Faker('uk_UA')
+faker = Faker('uk_UA')
 Faker.seed()
 
 
 def generated_person():
     yield Person(
-        full_name=faker_.first_name() + " " + faker_.last_name(),
-        email=faker_.email(),
-        current_address=faker_.address(),
-        permanent_address=faker_.address(),
+        full_name=faker.first_name() + " " + faker.last_name(),
+        firstname=faker.first_name(),
+        lastname=faker.last_name(),
+        email=faker.email(),
+        age=random.randint(10, 80),
+        salary=random.randint(10000, 100000),
+        department=faker.job(),
+        current_address=faker.address(),
+        permanent_address=faker.address(),
     )
