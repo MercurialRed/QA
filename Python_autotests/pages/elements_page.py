@@ -4,12 +4,14 @@ import time
 import random
 
 import requests
+from selenium.common import TimeoutException
 from selenium.webdriver.common.by import By
 
 from Python_autotests.generator.generator import generated_person, generated_file
 from Python_autotests.pages.base_page import BasePage
 from Python_autotests.locators.elements_page_locators import TextBoxPageLocators, CheckBoxPageLocators, \
-    RadioButtonPageLocators, WebTablePageLocators, ButtonPageLocators, LinksPageLocators, UploadAndDownloadPageLocators
+    RadioButtonPageLocators, WebTablePageLocators, ButtonPageLocators, LinksPageLocators, UploadAndDownloadPageLocators, \
+    DynamicPropertiesPageLocators
 
 
 class TextBoxPage(BasePage):
@@ -170,9 +172,6 @@ class ButtonsPage(BasePage):
         if type_click == "click":
             self.element_is_visible(self.locators.CLICK_ME_BUTTON).click()
             return self.check_clicked_on_the_button(self.locators.SUCCESS_CLICK_ME)
-        # if type_click == "click ":
-        #     self.element_is_visible(self.locators.CLICK_ME_BUTTON).click()
-        #     return self.check_clicked_on_the_button(self.locators.SUCCESS_CLICK_ME)
 
     def check_clicked_on_the_button(self, element):
         return self.element_is_present(element).text
@@ -228,6 +227,34 @@ class UploadAndDownloadPage(BasePage):
             os.remove(path)
             text = self.element_is_present(self.locators.UPLOADED_RESULT).text
             return file_name.split('\\')[-1], text.split('\\')[-1]
+
+class DynamicPropertiesPage(BasePage):
+    locators = DynamicPropertiesPageLocators()
+
+    def check_text_id_change(self):
+        text_id = self.element_is_visible(self.locators.DYNAMIC_TEXT_ID).get_attribute('id')
+        return text_id
+
+    def check_enable_button(self):
+        try:
+            self.element_is_clickable(self.locators.ENABLE_BUTTON)
+        except TimeoutException:
+            return False
+        return True
+
+    def check_change_of_color(self):
+        color_button = self.element_is_present(self.locators.COLOR_CHANGE_BUTTON)
+        color_button_before = color_button.value_of_css_property('color')
+        time.sleep(5)
+        color_button_after = color_button.value_of_css_property('color')
+        return color_button_before, color_button_after
+
+    def check_appear_of_button(self):
+        try:
+            self.element_is_visible(self.locators.VISIBLE_AFTER_FIVE_SEC_BUTTON)
+        except TimeoutException:
+            return False
+        return True
 
 
 
