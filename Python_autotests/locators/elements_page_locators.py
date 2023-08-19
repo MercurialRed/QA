@@ -62,3 +62,12 @@ class ButtonPageLocators:
     SUCCESS_RIGHT = (By.CSS_SELECTOR, "p[id='rightClickMessage']")
     SUCCESS_CLICK_ME = (By.CSS_SELECTOR, "p[id='dynamicClickMessage']")
 
+class LinksPageLocators:
+    SIMPLE_LINK = (By.CSS_SELECTOR, "a[id='simpleLink']")
+    BAD_REQUEST = (By.CSS_SELECTOR, "a[id='bad-request']")
+    NOT_FOUND = (By.CSS_SELECTOR, "a[id='invalid-url']")
+
+class UploadAndDownloadPageLocators:
+    DOWNLOAD_FILE = (By.CSS_SELECTOR, "a[id='downloadButton']")
+    UPLOAD_FILE = (By.CSS_SELECTOR, "input[id='uploadFile']")
+    UPLOADED_RESULT = (By.CSS_SELECTOR, "p[id='uploadedFilePath']")

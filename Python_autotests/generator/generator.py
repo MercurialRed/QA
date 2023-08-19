@@ -18,3 +18,10 @@ def generated_person():
         current_address=faker.address(),
         permanent_address=faker.address(),
     )
+
+def generated_file():
+    path = rf'S:\Python Projects\QA\Python_autotests\filetest{random.randint(0,999)}.txt'
+    file = open(path, 'w+')
+    file.write(f"Test{random.randint(0,999)}")
+    file.close()
+    return file.name, path
