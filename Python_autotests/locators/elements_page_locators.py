@@ -47,7 +47,7 @@ class WebTablePageLocators:
     DELETE_BUTTON = (By.CSS_SELECTOR, "span[title='Delete']")
     ROW_PARENT = (".//ancestor::div[@class='rt-tr-group']")
     NO_ROWS_FOUND = (By.CSS_SELECTOR, "div[class='rt-noData']")
-    COUNT_ROW_LIST = (By.CSS_SELECTOR, "select[aria-label-'rows per page']")
+    COUNT_ROW_LIST = (By.CSS_SELECTOR, "select[aria-label='rows per page']")
 
     # update
     UPDATE_BUTTON = (By.CSS_SELECTOR, "span[title='Edit']")
@@ -77,4 +77,6 @@ class DynamicPropertiesPageLocators:
     ENABLE_BUTTON = (By.CSS_SELECTOR, "button[id='enableAfter']")
     COLOR_CHANGE_BUTTON = (By.CSS_SELECTOR, "button[id='colorChange']")
     VISIBLE_AFTER_FIVE_SEC_BUTTON = (By.CSS_SELECTOR, "button[id='visibleAfter']")
+
+
 

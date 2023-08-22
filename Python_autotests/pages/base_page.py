@@ -11,12 +11,8 @@ class BasePage:
     def open(self):
         self.driver.get(self.url)
 
-    #def remove_footer(self):
-        #self.driver.execute_script("document.getElementsByTagName('close-fixedban')[0].remove();")
-        #self.driver.execute_script("document.getElementsByTagName('footer')[0].remove();")
-
     def element_is_visible(self, locator, timeout=5):
-        #self.go_to_element(self.element_is_present(locator))
+        self.go_to_element(self.element_is_present(locator))
         return wait(self.driver, timeout).until(EC.visibility_of_element_located(locator))
 
     def element_are_visible(self, locator, timeout=5):
@@ -47,6 +43,11 @@ class BasePage:
         action.context_click(element)
         action.perform()
 
+    def click_by_script(self, element):
+        self.driver.execute_script("arguments[0].click()", element)
 
+    #def remove_footer(self):
+        #self.driver.execute_script("document.getElementsById('close-fixedban').remove();")
+        #self.driver.execute_script("document.getElementsByTagName('footer')[0].remove();")
 
 

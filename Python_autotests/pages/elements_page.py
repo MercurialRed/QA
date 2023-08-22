@@ -147,6 +147,8 @@ class WebTablePage(BasePage):
     def select_up_to_some_rows(self):
         count = [5, 10, 20, 25, 50, 100]
         data = []
+        self.driver.execute_script("document.body.style.zoom = '0.5'")
+        time.sleep(5)
         for x in count:
             count_row_button = self.element_is_visible(self.locators.COUNT_ROW_LIST)
             self.go_to_element(count_row_button)
@@ -255,6 +257,10 @@ class DynamicPropertiesPage(BasePage):
         except TimeoutException:
             return False
         return True
+
+
+
+
 
 
 

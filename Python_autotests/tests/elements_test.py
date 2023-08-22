@@ -88,8 +88,8 @@ class TestElements:
             web_table_page = WebTablePage(driver, "https://demoqa.com/webtables/")
             web_table_page.open()
             count = web_table_page.select_up_to_some_rows()
-            assert count == [5, 10, 20, 25, 50, 100], "The number of rows in the table has not been changed or has changed incorectly"
-
+            assert count == [5, 10, 20, 25, 50,
+                             100], "The number of rows in the table has not been changed or has changed incorectly"
 
     class TestButtonPage:
         def test_different_click_on_buttons(self, driver):
@@ -104,7 +104,6 @@ class TestElements:
             assert double == "You have done a double click", "The double click button was not pressed"
             assert right == "You have done a right click", "The right click button was not pressed"
             assert click == "You have done a dynamic click", "The click button was not pressed"
-
 
     class TestLinksPage:
         def test_check_link(self, driver):
@@ -165,7 +164,5 @@ class TestElements:
             dynamic_properties_page.open()
             appear = dynamic_properties_page.check_appear_of_button()
             assert appear is True, "Button did not appear after 5 seconds"
-
-
 
 
