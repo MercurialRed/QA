@@ -32,13 +32,16 @@ class DatePickerPageLocators:
     DATE_AND_TIME_YEAR_LIST = (By.CSS_SELECTOR, 'div[class="react-datepicker__year-option"]')
 
 
-'''class SliderPageLocators:
-    = (By.CSS_SELECTOR, '[=""]')
+class SliderPageLocators:
+    INPUT_SLIDER = (By.CSS_SELECTOR, 'input[class="range-slider range-slider--primary"]')
+    SLIDER_VALUE = (By.CSS_SELECTOR, 'input[id="sliderValue"]')
+
 
 class ProgressBarPageLocators:
-    = (By.CSS_SELECTOR, '[=""]')
+    PROGRESS_BAR_BUTTON = (By.CSS_SELECTOR, 'button[id="startStopButton"]')
+    PROGRESS_BAR_VALUE = (By.CSS_SELECTOR, 'div[class="progress-bar bg-info"]')
 
-class TabsPageLocators:
+'''class TabsPageLocators:
     = (By.CSS_SELECTOR, '[=""]')
 
 class ToolTipsPageLocators:
