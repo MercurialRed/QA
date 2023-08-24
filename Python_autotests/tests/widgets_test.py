@@ -1,7 +1,7 @@
 import time
 
 from Python_autotests.pages.widgets_page import AccordianPage, AutoCompletePage, DatePickerPage, SliderPage, \
-    ProgressBarPage
+    ProgressBarPage, TabsPage
 
 
 class TestWidgetsPage:
@@ -71,13 +71,21 @@ class TestWidgetsPage:
             before, after = progress_bar_page.change_progress_bar_value()
             assert before != after, "The progress bar value has not been changed"
 
-    '''class TestTabsPage:
+    class TestTabsPage:
 
-        def (self, driver):
-            _page = TabsPage(driver, "https://demoqa.com/tabs")
-            _page.open()
+        def test_tabs(self, driver):
+            tabs_page = TabsPage(driver, "https://demoqa.com/tabs")
+            tabs_page.open()
+            what_button, what_content = tabs_page.check_tabs('what')
+            origin_button, origin_content = tabs_page.check_tabs('origin')
+            use_button, use_content = tabs_page.check_tabs('use')
+            more_button, more_content = tabs_page.check_tabs('more')
+            assert what_button == "What" and what_content != 0, 'The tab "What" was not pressed or the text is missing'
+            assert origin_button == "Origin" and origin_content != 0, 'The tab "Origin" was not pressed or the text is missing'
+            assert use_button == "Use" and use_content != 0, 'The tab "Use" was not pressed or the text is missing'
+            assert more_button == "More" and more_content != 0, 'The tab "More" was not pressed or the text is missing'
 
-    class TestToolTipsPage:
+    '''class TestToolTipsPage:
 
         def (self, driver):
             _page = ToolTipsPage(driver, "https://demoqa.com/tool-tips")

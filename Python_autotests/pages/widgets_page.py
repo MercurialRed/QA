@@ -7,7 +7,7 @@ from selenium.webdriver.support.select import Select
 
 from Python_autotests.generator.generator import generated_color, generated_date
 from Python_autotests.locators.widgets_page_locators import AccordianPageLocators, AutoCompletePageLocators, \
-    DatePickerPageLocators, SliderPageLocators, ProgressBarPageLocators
+    DatePickerPageLocators, SliderPageLocators, ProgressBarPageLocators, TabsPageLocators
 from Python_autotests.pages.base_page import BasePage
 
 
@@ -141,12 +141,34 @@ class ProgressBarPage(BasePage):
     
     
     
-'''class TabsPage(BasePage):
-    locators: TabsPageLocators()
+class TabsPage(BasePage):
+    locators = TabsPageLocators
+
+    def check_tabs(self, name_tab):
+        tabs = {'what':
+                    {'title': self.locators.TABS_WHAT,
+                     'content': self.locators.TABS_WHAT_CONTENT},
+                'origin':
+                    {'title': self.locators.TABS_ORIGIN,
+                     'content': self.locators.TABS_ORIGIN_CONTENT},
+                'use':
+                    {'title': self.locators.TABS_USE,
+                     'content': self.locators.TABS_USE_CONTENT},
+                'more':
+                    {'title': self.locators.TABS_MORE,
+                     'content': self.locators.TABS_MORE_CONTENT},
+                }
+
+        button = self.element_is_visible(tabs[name_tab]['title'])
+        button.click()
+        tab_content = self.element_is_visible(tabs[name_tab]['content']).text
+        return button.text, len(tab_content)
+
+
     
     
     
-class ToolTipsPage(BasePage):
+'''class ToolTipsPage(BasePage):
     locators: ToolTipsPageLocators()
     
     
