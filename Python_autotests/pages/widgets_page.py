@@ -3,10 +3,11 @@ import time
 
 from selenium.common import TimeoutException
 from selenium.webdriver import Keys
+from selenium.webdriver.support.select import Select
 
-
-from Python_autotests.generator.generator import generated_color
-from Python_autotests.locators.widgets_page_locators import AccordianPageLocators, AutoCompletePageLocators
+from Python_autotests.generator.generator import generated_color, generated_date
+from Python_autotests.locators.widgets_page_locators import AccordianPageLocators, AutoCompletePageLocators, \
+    DatePickerPageLocators
 from Python_autotests.pages.base_page import BasePage
 
 
@@ -22,7 +23,7 @@ class AccordianPage(BasePage):
                           'content': self.locators.SECTION_CONTENT_SECOND},
                      'third':
                          {'title': self.locators.SECTION_THIRD,
-                          'content': self.locators.SECTION_CONTENT_THIRD },
+                          'content': self.locators.SECTION_CONTENT_THIRD},
                      }
         section_title = self.element_is_visible(accordian[accordian_num]['title'])
         section_title.click()
@@ -32,6 +33,7 @@ class AccordianPage(BasePage):
             section_title.click()
             section_content = self.element_is_visible(accordian[accordian_num]['content']).text
         return [section_title.text, len(section_content)]
+
 
 class AutoCompletePage(BasePage):
     locators = AutoCompletePageLocators()
@@ -72,6 +74,66 @@ class AutoCompletePage(BasePage):
         return color.text
 
 
+class DatePickerPage(BasePage):
+    locators = DatePickerPageLocators()
+
+    def select_date(self):
+        date = next(generated_date())
+        input_date = self.element_is_visible(self.locators.DATE_INPUT)
+        value_date_before = input_date.get_attribute('value')
+        input_date.click()
+        self.set_date_by_text(self.locators.DATE_SELECT_MONTH, date.month)
+        self.set_date_by_text(self.locators.DATE_SELECT_YEAR, date.year)
+        self.set_date_item_from_list(self.locators.DATE_SELECT_DAY_LIST, date.day)
+        value_date_after = input_date.get_attribute("value")
+        return value_date_before, value_date_after
+
+    def select_date_and_time(self):
+        date = next(generated_date())
+        input_date = self.element_is_visible(self.locators.DATE_AND_TIME_INPUT)
+        value_date_before = input_date.get_attribute('value')
+        input_date.click()
+        self.element_is_visible(self.locators.DATE_AND_TIME_MONTH).click()
+        self.set_date_item_from_list(self.locators.DATE_AND_TIME_MONTH_LIST, date.month)
+        self.element_is_visible(self.locators.DATE_AND_TIME_YEAR).click()
+        self.set_date_item_from_list(self.locators.DATE_AND_TIME_YEAR_LIST, date.year)
+        self.set_date_item_from_list(self.locators.DATE_SELECT_DAY_LIST, date.day)
+        self.set_date_item_from_list(self.locators.DATE_AND_TIME_TIME_LIST, date.time)
+        input_date_after = self.element_is_visible(self.locators.DATE_AND_TIME_INPUT)
+        value_date_after = input_date_after.get_attribute("value")
+        return value_date_before, value_date_after
+
+    def set_date_by_text(self, element, value):
+        select = Select(self.element_is_present(element))
+        select.select_by_visible_text(value)
+
+    def set_date_item_from_list(self, elements, value):
+        item_list = self.element_are_present(elements)
+        for item in item_list:
+            if item.text == value:
+                item.click()
+                break
 
 
-
+'''class SliderPage(BasePage):
+    locators: SliderPageLocators()
+    
+    
+    
+class ProgressBarPage(BasePage):
+    locators: ProgressBarPageLocators()
+    
+    
+    
+class TabsPage(BasePage):
+    locators: TabsPageLocators()
+    
+    
+    
+class ToolTipsPage(BasePage):
+    locators: ToolTipsPageLocators()
+    
+    
+    
+class MenuPage(BasePage):
+    locators: MenuPageLocators()'''
