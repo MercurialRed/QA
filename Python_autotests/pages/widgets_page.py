@@ -7,7 +7,8 @@ from selenium.webdriver.support.select import Select
 
 from Python_autotests.generator.generator import generated_color, generated_date
 from Python_autotests.locators.widgets_page_locators import AccordianPageLocators, AutoCompletePageLocators, \
-    DatePickerPageLocators, SliderPageLocators, ProgressBarPageLocators, TabsPageLocators, ToolTipsPageLocators
+    DatePickerPageLocators, SliderPageLocators, ProgressBarPageLocators, TabsPageLocators, ToolTipsPageLocators, \
+    MenuPageLocators
 from Python_autotests.pages.base_page import BasePage
 
 
@@ -124,8 +125,8 @@ class SliderPage(BasePage):
         self.action_drag_and_drop_by_offset(slider_input, random.randint(0, 100), 0)
         value_after = self.element_is_visible(self.locators.SLIDER_VALUE).get_attribute('value')
         return value_before, value_after
-    
-    
+
+
 class ProgressBarPage(BasePage):
     locators = ProgressBarPageLocators()
 
@@ -138,9 +139,7 @@ class ProgressBarPage(BasePage):
         value_after = self.element_is_present(self.locators.PROGRESS_BAR_VALUE).text
         return value_before, value_after
 
-    
-    
-    
+
 class TabsPage(BasePage):
     locators = TabsPageLocators
 
@@ -163,8 +162,8 @@ class TabsPage(BasePage):
         button.click()
         tab_content = self.element_is_visible(tabs[name_tab]['content']).text
         return button.text, len(tab_content)
-    
-    
+
+
 class ToolTipsPage(BasePage):
     locators = ToolTipsPageLocators()
 
@@ -177,13 +176,24 @@ class ToolTipsPage(BasePage):
         return text
 
     def check_tool_tips(self):
-        tool_tip_text_button = self.get_text_from_tool_tips(self.locators.TOOLTIPS_BUTTON, self.locators.TOOLTIPS_BUTTON_TOOL_TIP)
-        tool_tip_text_field = self.get_text_from_tool_tips(self.locators.TOOLTIPS_FIELD, self.locators.TOOLTIPS_FIELD_TOOL_TIP)
-        tool_tip_text_contrary = self.get_text_from_tool_tips(self.locators.TOOLTIPS_CONTRARY_LINK, self.locators.TOOLTIPS_CONTRARY_TOOL_TIP)
-        tool_tip_text_section = self.get_text_from_tool_tips(self.locators.TOOLTIPS_SECTION_LINK, self.locators.TOOLTIPS_SECTION_TOOL_TIP)
+        tool_tip_text_button = self.get_text_from_tool_tips(self.locators.TOOLTIPS_BUTTON,
+                                                            self.locators.TOOLTIPS_BUTTON_TOOL_TIP)
+        tool_tip_text_field = self.get_text_from_tool_tips(self.locators.TOOLTIPS_FIELD,
+                                                           self.locators.TOOLTIPS_FIELD_TOOL_TIP)
+        tool_tip_text_contrary = self.get_text_from_tool_tips(self.locators.TOOLTIPS_CONTRARY_LINK,
+                                                              self.locators.TOOLTIPS_CONTRARY_TOOL_TIP)
+        tool_tip_text_section = self.get_text_from_tool_tips(self.locators.TOOLTIPS_SECTION_LINK,
+                                                             self.locators.TOOLTIPS_SECTION_TOOL_TIP)
         return tool_tip_text_button, tool_tip_text_field, tool_tip_text_contrary, tool_tip_text_section
 
-    
-    
-'''class MenuPage(BasePage):
-    locators: MenuPageLocators()'''
+
+class MenuPage(BasePage):
+    locators = MenuPageLocators()
+
+    def check_menu(self):
+        menu_item_list = self.element_are_present(self.locators.MENU_ITEM_LIST)
+        data = []
+        for item in menu_item_list:
+            self.action_move_to_element(item)
+            data.append(item.text)
+        return data
