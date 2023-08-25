@@ -7,7 +7,7 @@ from selenium.webdriver.support.select import Select
 
 from Python_autotests.generator.generator import generated_color, generated_date
 from Python_autotests.locators.widgets_page_locators import AccordianPageLocators, AutoCompletePageLocators, \
-    DatePickerPageLocators, SliderPageLocators, ProgressBarPageLocators, TabsPageLocators
+    DatePickerPageLocators, SliderPageLocators, ProgressBarPageLocators, TabsPageLocators, ToolTipsPageLocators
 from Python_autotests.pages.base_page import BasePage
 
 
@@ -56,9 +56,9 @@ class AutoCompletePage(BasePage):
         return count_value_before, count_value_after
 
     def check_color_in_multi(self):
-        color_list = self.elements_are_present(self.locators.MULTI_VALUE)
+        color_list = self.element_are_present(self.locators.MULTI_VALUE)
         colors = []
-        for color in colors:
+        for color in color_list:
             colors.append(color.text)
         return colors
 
@@ -163,15 +163,27 @@ class TabsPage(BasePage):
         button.click()
         tab_content = self.element_is_visible(tabs[name_tab]['content']).text
         return button.text, len(tab_content)
+    
+    
+class ToolTipsPage(BasePage):
+    locators = ToolTipsPageLocators()
 
+    def get_text_from_tool_tips(self, hover_elem, wait_elem):
+        element = self.element_is_present(hover_elem)
+        self.action_move_to_element(element)
+        self.element_is_visible(wait_elem)
+        tool_tip_text = self.element_is_visible(self.locators.TOOLTIPS_INNERS)
+        text = tool_tip_text.text
+        return text
+
+    def check_tool_tips(self):
+        tool_tip_text_button = self.get_text_from_tool_tips(self.locators.TOOLTIPS_BUTTON, self.locators.TOOLTIPS_BUTTON_TOOL_TIP)
+        tool_tip_text_field = self.get_text_from_tool_tips(self.locators.TOOLTIPS_FIELD, self.locators.TOOLTIPS_FIELD_TOOL_TIP)
+        tool_tip_text_contrary = self.get_text_from_tool_tips(self.locators.TOOLTIPS_CONTRARY_LINK, self.locators.TOOLTIPS_CONTRARY_TOOL_TIP)
+        tool_tip_text_section = self.get_text_from_tool_tips(self.locators.TOOLTIPS_SECTION_LINK, self.locators.TOOLTIPS_SECTION_TOOL_TIP)
+        return tool_tip_text_button, tool_tip_text_field, tool_tip_text_contrary, tool_tip_text_section
 
     
     
-    
-'''class ToolTipsPage(BasePage):
-    locators: ToolTipsPageLocators()
-    
-    
-    
-class MenuPage(BasePage):
+'''class MenuPage(BasePage):
     locators: MenuPageLocators()'''

@@ -45,16 +45,32 @@ class ProgressBarPageLocators:
 class TabsPageLocators:
     TABS_WHAT = (By.CSS_SELECTOR, 'a[id="demo-tab-what"]')
     TABS_WHAT_CONTENT = (By.CSS_SELECTOR, 'div[id="demo-tabpane-what"]')
+
     TABS_ORIGIN = (By.CSS_SELECTOR, 'a[id="demo-tab-origin"]')
     TABS_ORIGIN_CONTENT = (By.CSS_SELECTOR, 'div[id="demo-tabpane-origin"]')
+
     TABS_USE = (By.CSS_SELECTOR, 'a[id="demo-tab-use"]')
     TABS_USE_CONTENT = (By.CSS_SELECTOR, 'div[id="demo-tabpane-use"]')
+
     TABS_MORE = (By.CSS_SELECTOR, 'a[id="demo-tabpane-more"]')
     TABS_MORE_CONTENT = (By.CSS_SELECTOR, 'div[id="demo-tabpane-more"]')
 
 
-'''class ToolTipsPageLocators:
-    = (By.CSS_SELECTOR, '[=""]')
+class ToolTipsPageLocators:
+    TOOLTIPS_BUTTON = (By.CSS_SELECTOR, 'button[id="toolTipButton"]')
+    TOOLTIPS_BUTTON_TOOL_TIP = (By.CSS_SELECTOR, 'button[aria-describedby="buttonToolTip"]')
 
-class MenuPageLocators:
+    TOOLTIPS_FIELD = (By.CSS_SELECTOR, 'input[id="toolTipTextField"]')
+    TOOLTIPS_FIELD_TOOL_TIP = (By.CSS_SELECTOR, 'input[aria-describedby="textFieldToolTip"]')
+
+    TOOLTIPS_CONTRARY_LINK = (By.XPATH, '//*[.="Contrary"]')
+    TOOLTIPS_CONTRARY_TOOL_TIP = (By.CSS_SELECTOR, 'a[aria-describedby="contraryTexToolTip"]')
+
+    TOOLTIPS_SECTION_LINK = (By.XPATH, '//*[.="1.10.32"]')
+    TOOLTIPS_SECTION_TOOL_TIP = (By.CSS_SELECTOR, 'a[aria-describedby="sectionToolTip"]')
+
+    TOOLTIPS_INNERS = (By.CSS_SELECTOR, 'div[class="tooltip-inner"]')
+
+
+'''class MenuPageLocators:
     = (By.CSS_SELECTOR, '[=""]')'''
