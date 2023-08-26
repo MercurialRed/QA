@@ -1,6 +1,7 @@
 import time
 
-from Python_autotests.pages.interactions_page import SortablePage, SelectablePage, ResizablePage, DroppablePage
+from Python_autotests.pages.interactions_page import SortablePage, SelectablePage, ResizablePage, DroppablePage, \
+    DraggablePage
 
 
 class TestInteractionsPage:
@@ -70,9 +71,21 @@ class TestInteractionsPage:
             assert will_revert_before != will_revert_after, "The element has not been reverted"
             assert not_revert_before == not_revert_after, "The element has been reverted"
 
-'''
     class TestDraggablePage:
 
-        def test_(self, driver):
-            draggable_page = (driver, "https://demoqa.com/dragabble")
-            draggable_page.open()'''
+        def test_simple_draggable(self, driver):
+            draggable_page = DraggablePage(driver, "https://demoqa.com/dragabble")
+            draggable_page.open()
+            before, after = draggable_page.simple_drag_box()
+            assert before != after, "The position of the box has not been changed"
+
+        def test_axis_restricted_draggable(self, driver):
+            draggable_page = DraggablePage(driver, "https://demoqa.com/dragabble")
+            draggable_page.open()
+            top_x, left_x = draggable_page.axis_restricted_x()
+            top_y, left_y = draggable_page.axis_restricted_y()
+            assert top_x[0][0] == top_x[1][0] and int(top_x[1][0]) == 0, "Box position has not changed or there has been a shift in the y-axis"
+            assert left_x[0][0] != left_x[1][0] and int(left_x[1][0]) != 0, "Box position has not changed or there has been a shift in the y-axis"
+            assert top_y[0][0] != top_y[1][0] and int(top_y[1][0]) != 0, "Box position has not changed or there has been a shift in the x-axis"
+            assert left_y[0][0] == left_y[1][0] and int(left_y[1][0]) == 0, "Box position has not changed or there has been a shift in the x-axis"
+
