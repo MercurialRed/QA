@@ -1,11 +1,18 @@
 <h1 align="center">Hi 👋, I'm Maksym Boiko</h1>
-<h3 align="center">A passionate Junior QA Engineer from Ukraine</h3>
+<h3 align="center">A passionate QA Engineer from Ukraine</h3>
 
-- 🔭 I’m currently working on **enhancement of my hard skills**
+- 📄 My [CV](https://drive.google.com/file/d/1sNIc-7jWUP7BnDhuVxBeYsxzSa-aDew0/view?usp=sharing)
 
-- 📫 How to reach me **maksymboiko42@gmail.com**
-
-- 📄 My [CV](https://drive.google.com/file/d/12RQ4i894yPXyvefBmJ6-xxq4XJbp4dYE/view?usp=sharing)
+- 🔭 I’m currently working on **enhancement of my hard skills**. Check the results below:
+  - [Checklists -->](https://github.com/MercurialRed/QA/tree/main/Checklist)
+  - [Bug Reports -->](https://github.com/MercurialRed/QA/tree/main/BugReports)
+  - [API Testing --> ](https://github.com/MercurialRed/QA/tree/main/Postman)
+  - [Autotests with Python -->](https://github.com/MercurialRed/QA/tree/main/Python_autotests)
+  - [Telegram Bot with Python -->](https://github.com/MercurialRed/QA/tree/main/PythonTelegramBot/ChuckBot)
+  
+- 📫 How to reach me:
+  - [email](https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox?compose=SxfkdsFwfcFCzgbvBNZBTDwKgZLpdVKwsbdzqfpKRhRfCVTxGjdtZxFPkwFGZNkmDSLNCtPzjGsQRsfBJfjMmnXZtQcvBjvkndTfqdGWFnbqHdDjxQV): **maksymboiko42@gmail.com**
+  - [Telegram](https://t.me/M0rtRed): **M0rtRed**
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
