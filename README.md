@@ -1,7 +1,7 @@
 <h1 align="center">Hi 👋, I'm Maksym Boiko</h1>
 <h3 align="center">A passionate QA Engineer from Ukraine</h3>
 
-- 📄 My [CV](https://drive.google.com/file/d/1sNIc-7jWUP7BnDhuVxBeYsxzSa-aDew0/view?usp=sharing)
+- 📄 My [CV](https://drive.google.com/file/d/12vty9GjB9e8E70ASEwGajUd1xLqo8OSB/view?usp=sharing)
 
 - 🔭 I’m currently working on **enhancement of my hard skills**. Check the results below:
   - [Checklists -->](https://github.com/MercurialRed/QA/tree/main/Checklist)
