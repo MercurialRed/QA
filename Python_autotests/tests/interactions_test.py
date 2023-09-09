@@ -89,3 +89,5 @@ class TestInteractionsPage:
             assert top_y[0][0] != top_y[1][0] and int(top_y[1][0]) != 0, "Box position has not changed or there has been a shift in the x-axis"
             assert left_y[0][0] == left_y[1][0] and int(left_y[1][0]) == 0, "Box position has not changed or there has been a shift in the x-axis"
 
+
+
